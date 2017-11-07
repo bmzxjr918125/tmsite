@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package namespace="/admin" name="news" extends="tmsiteadmin">
+	
+        <action name="news*" class="adminNewsAction" method="{1}">
+        	
+            <result name="Show">/WEB-INF/page/news/newsList.jsp</result>
+            <result name="AddNews">/WEB-INF/page/news/newsAdd.jsp</result>
+            <result name="SaveNews" type="redirectAction">newsShow</result>
+            <result name="UpdateNews">/WEB-INF/page/news/newsUpdate.jsp</result>
+            <result name="UpdateSaveNews" type="redirectAction">newsShow</result>
+            
+            <result name="answer" type="json">
+				<param name="root">answer</param>
+			</result>
+			
+			<result name="AjaxShow" type="json">
+				<param name="root">dtJson</param>
+			</result>
+            
+        </action>
+        
+    </package>
+</struts>

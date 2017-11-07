@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package namespace="/website" name="webapply" extends="json-default">
+	
+        <action name="apply*" class="operatorApplyAction" method="{1}">
+            <result name="answer" type="json">
+                <param name="root">answer</param>
+                 <!--支持jsonp 跨域请求-->
+                 <param name="callbackParameter">callback</param>  
+                 <!-- <param name="noCache">true</param>   -->
+            </result>
+        </action>
+    </package>
+</struts>

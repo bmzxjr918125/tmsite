@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package namespace="/website" name="site" extends="json-default">
+        <action name="webSite*" class="webSiteAction" method="{1}">
+            <result name="IndexShow">/htmlPage/tamao/html/index.jsp</result>
+            <result name="AboutShow">/htmlPage/tamao/html/about_tamao.jsp</result>
+            <result name="DayShow">/htmlPage/tamao/html/tamao_everyday.jsp</result>
+            <result name="PlatShow">/htmlPage/tamao/html/merchant_plat.jsp</result>
+            
+            <result name="GetNoticeDetail">/htmlPage/tamao/html/notice_detail.jsp</result>
+            <result name="GetNewsDetail">/htmlPage/tamao/html/news_detail.jsp</result>
+            <result name="answer" type="json">
+                <param name="root">answer</param>
+                 <!--支持jsonp 跨域请求-->
+                 <param name="callbackParameter">callback</param>  
+                 <!-- <param name="noCache">true</param>   -->
+            </result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,132 @@
+body{
+    background-color: #f2f2f2;
+}
+.content{
+    background-color: #ffffff;
+    margin: 20px auto;
+    border-bottom: #dfdfdf solid 1px;
+}
+.news_list{
+    width: 990px;
+    margin-left: 34px;
+    padding: 25px 0;
+    overflow: hidden;
+    border-bottom: #dfdfdf solid 1px;
+}
+.news_list_left{
+    width: 205px;
+    height: 140px;
+    float: left;
+}
+.news_list_left img{
+    width: 100%;
+    height: 100%;
+}
+.news_list_right{
+    width: 725px;
+    float: left;
+    margin-left: 25px;
+}
+.news_head{
+    width: 725px;
+    overflow: hidden;
+}
+.news_head h2{
+    font-size: 22px;
+    color: #ff66cc;
+    line-height: 35px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.news_head h2:hover{
+    color: #ff9900;
+}
+.news_dic{
+    width: 725px;
+    height: 57px;
+    overflow: hidden;
+    padding: 15px 0;
+}
+/* .news_content p{
+    font-size: 16px;
+    color: #999999;
+    line-height: 19px;
+} */
+.news_label{
+    overflow: hidden;
+}
+.news_date{
+    overflow: hidden;
+    float: left;
+}
+.news_date img{
+    width: 14px;
+    height: 16px;
+    float: left;
+    padding: 3px 0;
+}
+.news_date span{
+    font-size: 16px;
+    color: #999999;
+    font-weight: 700;
+    padding: 0 10px;
+}
+.news_rep img{
+    width: 14px;
+    height: 16px;
+    float: left;
+    padding: 3px 0;
+    margin-left: 40px;
+}
+.news_rep span{
+    font-size: 16px;
+    color: #999999;
+    font-weight: 700;
+    padding: 0 15px;
+}
+.page{
+    padding: 30px 0;
+    overflow: hidden;
+}
+.page_main{
+    width: 450px;
+    height: 25px;
+    padding: 15px 0;
+    float: right;
+    margin-right: 30px;
+    border: #dfdfdf solid 1px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+.page_prev{
+    padding: 0 15px;
+    float: left;
+    font-size: 18px;
+    line-height: 25px;
+}
+.page_prev a{
+    font-weight: 700;
+}
+.page_num{
+    width: 265px;
+    height: 25px;
+    float: left;
+    border-left: #dfdfdf solid 1px;
+    border-right: #dfdfdf solid 1px;
+}
+.page_num a{
+    font-size: 16px;
+    color: #999999;
+    font-weight: 700;
+    padding: 0 12px;
+    line-height: 25px;
+}
+.page_next{
+    padding: 0 15px;
+    float: left;
+    font-size: 18px;
+    line-height: 25px;
+}
+.page_next a{
+    font-weight: 700;
+}

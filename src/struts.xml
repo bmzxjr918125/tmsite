@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<!--设定上传文件最大值是100M-->
+    <constant name="struts.multipart.maxSize"
+    value="1000000000000"/>
+    
+    <!-- admin验证 -->
+	<package name="tmsiteadmin" extends="json-default">
+		<interceptors>
+		    <!--账户的拦截判断-->
+			<interceptor name="adminInterceptor" class="com.util.interceptor.AdminInterceptor">
+				<param name="excludeMethods">Loginin</param>
+			</interceptor>
+			<interceptor-stack name="tmsiteadminInterceptor">
+				<interceptor-ref name="adminInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认拦截器  -->
+		<default-interceptor-ref name="tmsiteadminInterceptor"/>
+		 <!--默认action  -->
+		<default-action-ref name="pageNotFund"></default-action-ref>
+		<!-- 全局返回结果  -->
+		<global-results>
+			<result name="Login" type="redirectAction">adminLogin</result>
+			
+		</global-results>
+	</package>
+
+	<include file="struts/Html/Tm_Site.xml" />
+	<include file="struts/Html/Operator_Apply.xml" />
+  	
+  	<include file="struts/Admin/Admin.xml" />
+  	<include file="struts/Admin/Notice.xml" />
+  	<include file="struts/Admin/News.xml" />
+  	<include file="struts/Admin/Apply.xml" />
+  	<include file="struts/Admin/Lutrababy.xml" />
+
+</struts>
+

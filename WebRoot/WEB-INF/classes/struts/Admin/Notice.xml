@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package namespace="/admin" name="notice" extends="tmsiteadmin">
+	
+        <action name="notice*" class="adminNoticeAction" method="{1}">
+        	
+            <result name="Show">/WEB-INF/page/notice/noticeList.jsp</result>
+            <result name="AddNotice">/WEB-INF/page/notice/noticeAdd.jsp</result>
+            <result name="SaveNotice" type="redirectAction">noticeShow</result>
+            <result name="UpdateNotice">/WEB-INF/page/notice/noticeUpdate.jsp</result>
+            <result name="UpdateSaveNotice" type="redirectAction">noticeShow</result>
+            
+            <result name="answer" type="json">
+				<param name="root">answer</param>
+			</result>
+			
+			<result name="AjaxShow" type="json">
+				<param name="root">dtJson</param>
+			</result>
+            
+        </action>
+        
+    </package>
+</struts>

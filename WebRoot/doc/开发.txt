@@ -1,0 +1,40 @@
+必须依赖表：
+
+      styg_activitie_type
+      styg_area
+      styg_city
+      styg_sysmenu
+      styg_
+      
+dwz:
+                    增删改查  ------> 页面都用navTab 
+                    图片上传,把from表单onsubmit里面的validateCallback改成iframeCallback
+                   分页实现每页显示大小改变,在action显示页面上加入如下代码放在new Page(),之后
+                     由于默认大小改为了5,所以才有判断是否为5
+    代码如下:
+            String numPerPage = request.getParameter("numPerPage");
+            if(numPerPage != null && numPerPage != "5") {
+                page.setNumPerPage(Integer.parseInt(numPerPage));
+            }
+    dwz.combox.js里面改动了<a>标签的href="javascript:void(0)"这样原来的连接就不会起效果
+        只会产生下拉框onchange事件
+        
+        
+        
+        
+        1.页面添加能成功，但是一直出现加载中，...数据加载中，请等待
+                                                     解决原因，1.如果是弹出窗口,一定from表单返回的是一个dialogAjaxDone
+                      2.如果是页面,则为navTabAjaxDone
+                      3.Action里面的ajaxObject一定要写get和set方法
+        2.出现VM_bind,Scoket等关键字的异常,打开任务管理器,把javaw结束
+    
+        3.页面找不到Action,或者找到的是一个错误的action
+             1.看是否跳转action的名字写错.
+             2.确定是否有这个方法.
+             3.确定自己是否按规范写.不按规范也许会和别人冲突
+             4.是否在struts.xml中做了包含
+        
+        4.添加成功.或者更新成功后，添加,更新页面不关闭,检查action是否设有callBack为closeCurrent
+        5.添加成功,或者更新成功后，添加跟心页面关闭，但是不刷新当前页面，看看传过来的ajaxObject
+                                                    是否包含navTab对应rel的值
+    

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package namespace="/admin" name="admin" extends="tmsiteadmin">
+	
+        <action name="admin*" class="adminManagerAction" method="{1}">
+        	
+            <result name="Login">/WEB-INF/page/admin/admin_login.jsp</result>
+            <result name="input">/WEB-INF/page/admin/admin_login.jsp</result>
+            <result name="success">/WEB-INF/page/admin/home.jsp</result>
+            
+            <result name="GetAdminList">/WEB-INF/page/admin/adminList.jsp</result>
+            
+            <result name="answer" type="json">
+				<param name="root">answer</param>
+			</result>
+			
+			<result name="AjaxGetAdminList" type="json">
+				<param name="root">dtJson</param>
+			</result>
+            
+        </action>
+        
+    </package>
+</struts>
